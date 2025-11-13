@@ -37,8 +37,13 @@ void MainWindow::on_btnDivide_clicked()
 {
     firstNum = ui->txtFirstNum->text().toInt();
     secondNum = ui->txtSecondNum->text().toInt();
-    result = firstNum / secondNum;
-    ui->txtResult->setText(QString::number(result));
+    if (secondNum == 0){
+        ui->txtResult->setText("Cannot divide by 0");
+    } else {
+        result = firstNum / secondNum;
+        ui->txtResult->setText(QString::number(result));
+    }
+
 }
 
 
